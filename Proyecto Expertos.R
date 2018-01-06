@@ -24,14 +24,14 @@ output <- compute(nuevo, test[ , c("Age", "GenderFemale",
                                  "GenderMale", "family_historyYes","work_interfereOften"
                                  ,"work_interfereRarely","work_interfereSometimes")])
 
-salida=data.frame(predict(ment,test),treatment=predict(ment,test))
+salida=data.frame(predict(ment,test),treatmentYes=predict(ment,test))
 
 result <- data.frame(
   Real = test1$treatmentYes, 
   Predicted = levels(ment$treatmentYes)[round(output$net.result)])
 result
 
-# Tabla de confusión
+# Tabla de confusiÃ³n
 table(result$Predicted, result$Real)
 
 
